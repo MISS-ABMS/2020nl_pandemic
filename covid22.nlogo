@@ -1,7 +1,7 @@
 extensions [ csv ]
 
 __includes["setup-patches.nls" "setup-persons.nls" "setup-testing-units.nls" "setup-strategies.nls"
-            "action-persons.nls" "virus-dynamic.nls"]
+            "action-persons.nls" "virus-dynamic.nls" "action-testing-units.nls" "action-strategies.nls"]
 
 
 globals
