@@ -1,16 +1,30 @@
 extensions [ csv ]
 
+__includes["setup-patches.nls" "setup-persons.nls" "testing-units.nls" "setup-strategies.nls" "virus-dynamic.nls"]
+
+
+globals
+[
+;setup-strategies
+;virus-dynamic
+]
+
+breed[persons person]
+
+persons-own[
+
+]
+
 patches-own [
   letter
 ]
 
-__includes["setup-patches.nls"]
-
 to setup
   clear-all
   file-close-all
-  create-patches
-  ; create agents
+  ;create-patches
+  ; create-persons
+  ; testing-units
   reset-ticks
 end
 
