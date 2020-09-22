@@ -27,20 +27,43 @@ In the text : “Health authorities are requesting the scientific community work
  
 ## Entities State variables and scales
 
-probabilities of contagion , being symptomatic  / asymptomatic ? in the test-and-isolate, how is it decided who will be tested ? 
+?? probabilities of contagion , being symptomatic  / asymptomatic ? in the test-and-isolate, how is it decided who will be tested ? 
 
 ### Person 
-
 - Activity / location : work / school / home 
 - State : Immune / infected / incubation / initial 
 - Symptoms : yes / no
 - Date of contact 
 - Date of infection 
 - Date of recovery
+- home (the place they live)
+- family_links (to the people they live with)
+
+### Testing_unit (hospital)
+- mobile : y / n
+- delay (how long does it takes to get the answer)
+- fiability 
+- daily-capacity (how many people they can test a day)
+??  could people be tested at their place 
+
+### place 
 
 ### Global 
 
-Strategy : confinement / test-and-isolate
+Strategy : 
+- confinement 
+	- ? how long ? 
+	- ? how strict ? 
+- test-and-isolate
+	- ? who is tested ? all infected people? which tracability of the contact cases ? 
+	- ? duration of isolation 
+
+Virus dynamics 
+	- contagion_probability 10% (? how much is it around 10%) (if your are in the same place)
+	- incubation_duration 5 days (? the same for everybody or is there a margin around 5 days)
+	- asymptomatic_probability 20% (? how much around 20%)
+	- recovery time 45  days 
+	- ?? time during whihc people are infectious 
 
 - Entities: The “entities” (things) of the model: what type of agents, what type of patches (if the model is grid-based), and other environmental variables, for example seasonal rainfall patterns. 
 - State variables: The variables you want to use to characterize your entities. (Very likely you know this only later in detail, but at least you should come up with some first ideas.)
