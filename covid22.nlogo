@@ -4,27 +4,12 @@ patches-own [
   letter
 ]
 
+__includes["setup-patches.nls"]
+
 to setup
   clear-all
   file-close-all
-  ; read csv to create world
-  file-open "ssc_spatial-grid - Feuil1.csv"
-  ; We'll read all the data in a single loop
-  let i 0
-  while [ not file-at-end? ] [
-    ; here the CSV extension grabs a single line and puts the read data in a list
-    let data csv:from-row file-read-line
-    let j 0
-    foreach data [
-      ask patch i j [
-        set letter item j data
-        set j j + 1
-      ]
-    ]
-    set i i + 1
-  ]
-  ask patches [set plabel letter]
-  file-close ; make sure to close the file
+  create-patches
   ; create agents
   reset-ticks
 end
