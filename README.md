@@ -57,6 +57,7 @@ Strategy :
 - test-and-isolate
 	- ? who is tested ? all infected people? which tracability of the contact cases ? 
 	- ? duration of isolation 
+	-> proposition of Lazlo : strategy with extensive and fast testing when an infected person is detected 
 
 Virus dynamics 
 	- contagion_probability 10% (? how much is it around 10%) (if your are in the same place)
