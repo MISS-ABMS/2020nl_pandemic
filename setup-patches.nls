@@ -1,5 +1,5 @@
 
-to create-patches
+to setup-patches
   ; read csv to create world
   file-open "ssc_spatial-grid - Feuil1.csv"
   ; We'll read all the data in a single loop

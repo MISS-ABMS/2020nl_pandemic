@@ -1,12 +1,15 @@
 extensions [ csv ]
 
-__includes["setup-patches.nls" "setup-persons.nls" "testing-units.nls" "setup-strategies.nls" "virus-dynamic.nls"]
+__includes["setup-patches.nls" "setup-persons.nls" "setup-testing-units.nls" "setup-strategies.nls"
+            "action-persons.nls" "virus-dynamic.nls"]
 
 
 globals
 [
-;setup-strategies
-;virus-dynamic
+;strategies variables
+
+;virus-dynamic variables
+
 ]
 
 breed[persons person]
@@ -22,9 +25,10 @@ patches-own [
 to setup
   clear-all
   file-close-all
-  ;create-patches
-  ; create-persons
-  ; testing-units
+  setup-patches
+  setup-persons
+  setup-strategies
+  setup-testing-units
   reset-ticks
 end
 
