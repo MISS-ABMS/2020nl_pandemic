@@ -1,3 +1,11 @@
 to setup-persons
-  ; to fill @Belen
+   ask persons [
+    set state initial        ;; everyone starts with initial state, means they can get infected
+    set activity             ;; school or work
+    set symptomps no         ;; everyone starts without symptomps because they are not infected
+    set date-of-contact 0    ;; All dates are set to 0
+    set date-of-infection 0
+    set date-of-recovery 0   
+    set my-home              ;; Tell in which house the persons sleeps 
+   	]
 end
