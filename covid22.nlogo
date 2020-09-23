@@ -21,7 +21,8 @@ persons-own[
     date-of-contact     
     date-of-infection 
     date-of-recovery    
-    my-home               
+    my-home
+    my-links
 ]
 
 patches-own [
