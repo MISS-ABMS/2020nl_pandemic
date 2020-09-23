@@ -1,11 +1,13 @@
 to setup-persons
-   ask persons [
-    set state initial        ;; everyone starts with initial state, means they can get infected
-    set activity             ;; school or work
-    set symptomps no         ;; everyone starts without symptomps because they are not infected
-    set date-of-contact 0    ;; All dates are set to 0
+   create-persons 100  
+  ask persons [
+    set shape "person" set color random 256 set size 1
+    set state "initial"                                  ;; everyone starts with initial state, means they can get infected
+    set activity one-of ["school" "work"]                ;; school or work
+    set symptomps "no"                                   ;; everyone starts without symptomps because they are not infected
+    set date-of-contact 0                                ;; All dates are set to 0
     set date-of-infection 0
     set date-of-recovery 0   
-    set my-home              ;; Tell in which house the persons sleeps 
+    set my-home one-of patches with [plabel = "H" ]            ;; Tell in which house the persons sleeps 
    	]
 end
