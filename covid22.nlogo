@@ -15,7 +15,14 @@ globals
 breed[persons person]
 
 persons-own[
-
+    state 
+    activity             
+    symptomps          
+    date-of-contact     
+    date-of-infection 
+    date-of-recovery    
+    my-home
+    my-links
 ]
 
 patches-own [
