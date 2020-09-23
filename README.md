@@ -31,6 +31,7 @@ In the text : “Health authorities are requesting the scientific community work
 
 ### Person 
 - Activity / location : work / school / home 
+- type : child / adult 
 - State : Immune / infected / incubation / initial 
 - Symptoms : yes / no
 - Date of contact 
