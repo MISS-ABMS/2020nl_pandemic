@@ -1,3 +1,11 @@
+to work
+  ask persons [
+    ifelse activity = "work" [move-to my-work] [move-to my-school]
+  ]   
+end
+
 to sleep
-  ; an example of action of persons
+  ask persons [
+    move-to my-home
+  ]
 end
