@@ -18,4 +18,12 @@ to setup-patches
   ]
   ask patches [set plabel letter]
   file-close ; make sure to close the file
+  color-patches
+end
+
+to color-patches
+  ask patches with [plabel = "H"][set pcolor red]
+  ask patches with [plabel = "W"][set pcolor blue]
+  ask patches with [plabel = "S"][set pcolor green]
+  ask patches with [plabel = "I"][set pcolor yellow]
 end
