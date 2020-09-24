@@ -15,19 +15,25 @@ globals
 breed[persons person]
 
 persons-own[
-    state 
-    activity             
-    symptomps          
-    date-of-contact     
-    date-of-infection 
-    date-of-recovery    
+    state
+    activity
+    symptoms
+    date-of-contact
+    date-of-infection
+    date-of-recovery
     my-home
-    my-work
-    my-school
+    my-links_
+   containmenTime
+  contagion_probability
+  incubation_duration
+  asymptomatic_probability
+  recovery_time
 ]
 
 patches-own [
   letter
+  my-work
+  my-school
 ]
 
 to setup
@@ -35,13 +41,17 @@ to setup
   file-close-all
   setup-patches
   setup-persons
-  setup-strategies
+  setup-virus-dynamic
+  ;setup-strategies
   setup-testing-units
   reset-ticks
 end
 
 
 to go
+work
+sleep
+spread
 
 end
 @#$#@#$#@
@@ -105,6 +115,31 @@ NIL
 NIL
 NIL
 1
+
+CHOOSER
+3
+72
+165
+117
+setup-strategy
+setup-strategy
+"containment" "testing-and-isolating"
+0
+
+SLIDER
+5
+123
+171
+156
+nbdayContainment
+nbdayContainment
+0
+50
+40.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?

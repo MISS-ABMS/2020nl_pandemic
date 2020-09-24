@@ -1,3 +1,33 @@
 to manage
-  ;;to fill
+  ifelse setup-strategy = "containment"
+  [
+    ask persons with [state = "infected"]
+    [
+      move-to one of patches with [plabel = "I"]
+      set state "contained"
+      set containmenTime containmenTime + 1
+    ]
+  ]
+  ; if setup-strategy = "testing-and-isolated"
+  [
+    ask persons with [date-of-contact > 0] 
+    [
+    if random-float 1 < 0.2
+      [
+      ;; testing units
+      ]
+    ]
+  ]
+  stop-containement
+end
+
+to stop-containement
+  ask persons with [state = "infected"]
+  [
+  if containmenTime = nbdayContainment
+    [
+    set state "immune"
+    move-to my-home
+    ]
+  ]
 end
