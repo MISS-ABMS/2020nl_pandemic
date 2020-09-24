@@ -13,7 +13,7 @@ to spread
      set date-of-infection ticks
      let rndm1 random-float 1
      if rndm1 >= asymptomatic_probability     ; Probability to become symptomatic or not
-      [set symptomps "yes"]
+      [set symptoms "yes"]
     ]
   ]
   

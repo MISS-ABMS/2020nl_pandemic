@@ -3,7 +3,7 @@ to manage
   [
     ask persons with [state = "infected"]
     [
-      move-to one of patches with [plabel = "I"]
+      move-to one-of patches with [plabel = "I"]
       set state "contained"
       set containmenTime containmenTime + 1
     ]

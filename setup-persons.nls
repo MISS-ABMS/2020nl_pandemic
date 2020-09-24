@@ -5,7 +5,7 @@ to setup-persons
     set activity one-of ["school" "work"]                                              ;; persons go to school or work
         if activity = "work" [set my-work one-of patches with [plabel = "W"]]
         if activity = "school" [set my-school one-of patches with [plabel = "S"]]
-    set symptomps "no"                                                                 ;; everyone starts without symptomps because they are not infected
+    set symptoms "no"                                                                 ;; everyone starts without symptomps because they are not infected
     set date-of-contact 0                                                              ;; All dates are set to 0
     set date-of-infection 0
     set date-of-recovery 0   

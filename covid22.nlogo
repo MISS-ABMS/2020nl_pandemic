@@ -9,25 +9,30 @@ globals
 ;strategies variables
 
 ;virus-dynamic variables
-
-]
-
-breed[persons person]
-
-persons-own[
-    state
-    activity
-    symptoms
-    date-of-contact
-    date-of-infection
-    date-of-recovery
-    my-home
-    my-links_
-   containmenTime
   contagion_probability
   incubation_duration
   asymptomatic_probability
   recovery_time
+
+]
+
+breed[persons person]
+breed[tUs tU]
+
+persons-own[
+  state
+  activity
+  symptoms
+  date-of-contact
+  date-of-infection
+  date-of-recovery
+  my-home
+  my-links_
+  containmenTime
+  ;contagion_probability
+  ;incubation_duration
+  ;asymptomatic_probability
+  ;recovery_time
 ]
 
 patches-own [
@@ -106,7 +111,7 @@ BUTTON
 50
 NIL
 go
-NIL
+T
 1
 T
 OBSERVER
@@ -136,6 +141,21 @@ nbdayContainment
 0
 50
 40.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+0
+169
+200
+202
+number-testing-unit
+number-testing-unit
+0
+100
+50.0
 1
 1
 NIL
