@@ -58,7 +58,7 @@ to go
 work
 sleep
 spread
-
+tick
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -112,7 +112,7 @@ BUTTON
 50
 NIL
 go
-NIL
+T
 1
 T
 OBSERVER
