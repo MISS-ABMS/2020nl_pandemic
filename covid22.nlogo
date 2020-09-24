@@ -27,6 +27,8 @@ persons-own[
   date-of-infection
   date-of-recovery
   my-home
+  my-work
+  my-school
   my-links_
   containmenTime
   ;contagion_probability
@@ -37,8 +39,7 @@ persons-own[
 
 patches-own [
   letter
-  my-work
-  my-school
+
 ]
 
 to setup
@@ -111,7 +112,7 @@ BUTTON
 50
 NIL
 go
-T
+NIL
 1
 T
 OBSERVER
