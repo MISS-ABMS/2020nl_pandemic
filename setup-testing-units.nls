@@ -1,3 +1,10 @@
 to  setup-testing-units
-  ; to fill
+  ct number-testing-unit  ;; make slider with number of testing-units (0 - x)
+  ;; site them ramdomly wherever where there no buildings
+  if [ pcolor = black ] 
+  ;; subsitute black with colour of patches w/o buildings 
+  ;; alternative: - if [ plabel = " " ] - in case labels are present on all buildings
+  setxy random-xcor random-ycor
+  ;; may need other entities setting up here (see epiDEM Travel and Control model) - I have no access to ODD or full model overview 
 end
+
