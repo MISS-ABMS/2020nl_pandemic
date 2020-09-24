@@ -18,12 +18,10 @@ to spread
   ]
   
   ask persons with [state = "infected"] [
-   ifelse (date-of-infection - ticks >= recovery_time)
-   [
+   ifelse ((ticks - date-of-infection) >= recovery_time)[
     set state "immune"
     set date-of-recovery ticks
-   ]
-   [
+   ][
     let rndm2 random-float 1
     if any? other persons-here and rndm2 <= contagion_probability  ; If any other person in the same place, infect the others with the contagion proba
     [foreach (list other persons-here) 
