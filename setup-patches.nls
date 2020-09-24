@@ -23,6 +23,7 @@ end
 
 to color-patches
   ask patches with [plabel = "H"][set pcolor red]
+  ask patches with [pcolor = red] [set pcolor pxcor * pycor]
   ask patches with [plabel = "W"][set pcolor blue]
   ask patches with [plabel = "S"][set pcolor green]
   ask patches with [plabel = "I"][set pcolor yellow]
