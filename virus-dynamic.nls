@@ -13,12 +13,12 @@ to spread
      set date-of-infection ticks
      let rndm1 random-float 1
      if rndm1 >= asymptomatic_probability     ; Probability to become symptomatic or not
-      [set symptoms "yes"]
+      [set symptomps "yes"]
     ]
   ]
   
-  ask persons with [state = "infected"]
-   ifelse date-of-infection - ticks >= recovery_time]
+  ask persons with [state = "infected"] [
+   ifelse (date-of-infection - ticks >= recovery_time)
    [
     set state "immune"
     set date-of-recovery ticks
@@ -33,4 +33,5 @@ to spread
      ]
     ]
    ]
+  ]
 end
