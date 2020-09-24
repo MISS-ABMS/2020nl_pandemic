@@ -162,6 +162,26 @@ number-testing-unit
 NIL
 HORIZONTAL
 
+PLOT
+642
+34
+842
+184
+Infection dynamic
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -2674135 true "" "plot count persons with [state = \"infected\"]"
+"pen-1" 1.0 0 -14439633 true "" "plot count persons with [state = \"immune\"]"
+"pen-2" 1.0 0 -7500403 true "" "plot count persons with [state = \"incubation\"]"
+
 @#$#@#$#@
 ## WHAT IS IT?
 
