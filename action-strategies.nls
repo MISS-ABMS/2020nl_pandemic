@@ -1,33 +1,69 @@
 to manage
+  ;When 5 or more infected persons are discovered, the population is confined
+  ;and infected persons are isolated for treatment
   ifelse setup-strategy = "containment"
   [
-    ask persons with [state = "infected"]
+    if count persons with [state = "infected"] >= 3
     [
-      move-to one-of patches with [plabel = "I"]
-      set state "contained"
-      set containmenTime containmenTime + 1
-    ]
-  ]
-  ; if setup-strategy = "testing-and-isolated"
-  [
-    ask persons with [date-of-contact > 0] 
-    [
-    if random-float 1 < 0.2
-      [
-      ;; testing units
+      ask persons with [can-go-out? and habitat = "home"][
+        set habitat "confined"
       ]
     ]
+    ask persons with [habitat = "confined"][
+      set containmenTime containmenTime + 1
+      set can-go-out? false 
+    ]
+    
+    ;    ask persons with [state = "infected"]
+    ;    [
+    ;      move-to one-of patches with [plabel = "I"]
+    ;      set treatmenTime treatmenTime + 1
+    ;      set state "isolated"
+    ;      set can-go-out? false
+    ;    ]
   ]
-  stop-containement
+  ; if setup-strategy = "testing-and-isolated"
+  ; this assumes that in the number of persons tested each day between 0 to 20% of infected persons 
+  ; are discovered and isolated
+  [
+    ask persons with [state = "infected"] 
+    [
+      if random-float 1 < 0.2  
+      [
+        move-to one-of patches with [plabel = "I"]
+        set habitat "isolated"
+        set can-go-out? false
+      ]
+      ask persons with [habitat = "isolated"]
+      [set treatmenTime treatmenTime + 1]
+    ]
+  ]
+  
+  stop-containment
+  stop-isolating
+  tick 
 end
 
-to stop-containement
-  ask persons with [state = "infected"]
+to stop-containment
+  ask persons with [can-go-out? = false and habitat = "confined"]
   [
-  if containmenTime = nbdayContainment
+    if containmenTime >= nbdayContainment
     [
-    set state "immune"
-    move-to my-home
+      set can-go-out? true
+      set habitat "home"
+    ]
+  ]
+end
+
+to stop-isolating
+  ask persons with [can-go-out? = false and habitat = "isolated"]
+  [
+    if treatmenTime = recovery_time
+    [
+      set state "immune"
+      set habitat "home" 
+      set color yellow
+      set can-go-out? true
     ]
   ]
 end

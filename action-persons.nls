@@ -1,11 +1,13 @@
 to work
-  ask persons [
-    ifelse activity = "work" [move-to my-work] [move-to my-school]
+  ask persons with [can-go-out?][
+    ifelse activity = "work" 
+    [move-to one-of patches with [plabel = "W"]]
+    [move-to one-of patches with [plabel = "S"]]
   ]   
 end
 
 to sleep
-  ask persons [
+  ask persons with [can-go-out?][
     move-to my-home
   ]
 end

@@ -14,6 +14,7 @@ globals
   asymptomatic_probability
   recovery_time
 
+
 ]
 
 breed[persons person]
@@ -30,11 +31,10 @@ persons-own[
   my-work
   my-school
   my-links_
+  can-go-out?
+  habitat
   containmenTime
-  ;contagion_probability
-  ;incubation_duration
-  ;asymptomatic_probability
-  ;recovery_time
+  treatmenTime
 ]
 
 patches-own [
@@ -48,7 +48,6 @@ to setup
   setup-patches
   setup-persons
   setup-virus-dynamic
-  ;setup-strategies
   setup-testing-units
   reset-ticks
 end
@@ -58,7 +57,7 @@ to go
 work
 sleep
 spread
-tick
+manage
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -141,7 +140,7 @@ nbdayContainment
 nbdayContainment
 0
 50
-40.0
+13.0
 1
 1
 NIL
@@ -181,6 +180,17 @@ PENS
 "default" 1.0 0 -2674135 true "" "plot count persons with [state = \"infected\"]"
 "pen-1" 1.0 0 -14439633 true "" "plot count persons with [state = \"immune\"]"
 "pen-2" 1.0 0 -7500403 true "" "plot count persons with [state = \"incubation\"]"
+
+MONITOR
+665
+301
+770
+346
+infected persons
+count (persons with [state = \"infected\"])
+17
+1
+11
 
 @#$#@#$#@
 ## WHAT IS IT?
