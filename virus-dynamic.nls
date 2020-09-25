@@ -9,7 +9,7 @@ to spread
   
   ask persons with [state = "incubation"]     ; Incubation part
   [
-    if date-of-contact - ticks > incubation_duration  ; If being in contact with an infected person since 5 days, become infected
+    if (ticks - date-of-contact) > incubation_duration  ; If being in contact with an infected person since 5 days, become infected
     [set state "infected"
       set color red
      set date-of-infection ticks
