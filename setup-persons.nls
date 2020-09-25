@@ -1,5 +1,5 @@
 to setup-persons
-<<<<<<< Updated upstream
+
   ask patches with [plabel = "H"] [
     sprout-persons 1 [set activity "work"]
     sprout-persons 3 [set activity one-of ["school" "work"]]  
@@ -10,37 +10,29 @@ to setup-persons
     set state "initial"                                                                ;; everyone starts with initial state, means they can get infected
       if activity = "work" [set my-work one-of patches with [plabel = "W"]]            ;; the school or work they go to
         if activity = "school" [set my-school one-of patches with [plabel = "S"]]                                    
-=======
-  create-persons 100 [
     set shape "person" set color white set size 1   ;random 256
     set state "initial"                                                                ;; everyone starts with initial state, means they can get infected
     set activity one-of ["school" "work"]                                              ;; persons go to school or work
     if activity = "work" [set my-work one-of patches with [plabel = "W"]]
     if activity = "school" [set my-school one-of patches with [plabel = "S"]]
->>>>>>> Stashed changes
     set symptoms "no"                                                                 ;; everyone starts without symptomps because they are not infected
     set date-of-contact 0                                                              ;; All dates are set to 0
     set date-of-infection 0
     set date-of-recovery 0   
-<<<<<<< Updated upstream
     set my-home patch-here                                                             ;; The house were the person sleeps 
-   	]
-end 
-=======
-    set my-home one-of patches with [plabel = "H" ]                                    ;; The house were the person sleeps 
+    ;; 
     set can-go-out? true
     set containmenTime 0
     set treatmenTime 0
     set habitat "home"
-  ]
-    ask persons 
-    [
-      move-to one-of patches with [plabel = "H"]
-    ]
-    ask n-of 3 persons
-    [
+   	]
+  
+   ask n-of 3 persons[
       set state "infected"
       set color red
     ]
-end
->>>>>>> Stashed changes
+end 
+
+       
+
+

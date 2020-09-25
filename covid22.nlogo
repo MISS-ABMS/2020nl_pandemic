@@ -54,10 +54,11 @@ end
 
 
 to go
-work
-sleep
-spread
-manage
+  work
+  sleep
+  spread
+  manage
+  tick
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -174,12 +175,12 @@ NIL
 0.0
 10.0
 true
-false
+true
 "" ""
 PENS
-"default" 1.0 0 -2674135 true "" "plot count persons with [state = \"infected\"]"
-"pen-1" 1.0 0 -14439633 true "" "plot count persons with [state = \"immune\"]"
-"pen-2" 1.0 0 -7500403 true "" "plot count persons with [state = \"incubation\"]"
+"infected" 1.0 0 -2674135 true "" "plot count persons with [state = \"infected\"]"
+"immune" 1.0 0 -14439633 true "" "plot count persons with [state = \"immune\"]"
+"incub." 1.0 0 -7500403 true "" "plot count persons with [state = \"incubation\"]"
 
 MONITOR
 665
