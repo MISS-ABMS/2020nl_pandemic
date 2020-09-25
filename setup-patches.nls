@@ -27,5 +27,4 @@ to color-patches
   ask patches with [plabel = "W"][set pcolor blue]
   ask patches with [plabel = "S"][set pcolor green]
   ask patches with [plabel = "I"][set pcolor yellow]
-  ask patches with [pcolor = red] [set plabel " "]
 end
